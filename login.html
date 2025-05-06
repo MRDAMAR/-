@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Увійти – Shadow Fight 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<section id="login-page">
+  <div class="login-content">
+    <div class="login-header">
+      <h1>Sign in</h1>
+      <p><a href="#">or create an account</a></p>
+    </div>
+
+    <form id="login-form">
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="sign-in-btn">Sign in</button>
+
+      <button type="button" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" width="20" alt="Google Logo">
+        Sign in with Google
+      </button>
+
+      <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
