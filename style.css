@@ -1,25 +1,19 @@
-/* Підключення шрифтів */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* Базова стилізація */
 body {
   margin: 0;
   font-family: 'Roboto', Arial, sans-serif;
   background: #111;
   color: #fff;
 }
-
 header {
   position: relative;
   overflow: hidden;
 }
-
-.nav-bar {
+header .nav-bar {
   background: #000;
   padding: 1rem;
 }
-
-.nav-bar ul {
+header .nav-bar ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,71 +21,60 @@ header {
   padding: 0;
   margin: 0;
 }
-
-.nav-bar li {
+header .nav-bar ul li {
   margin: 0 1rem;
 }
-
-.nav-bar a {
-  color: white;
+header .nav-bar ul li a {
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
-
-.image-wrapper {
+header .image-wrapper {
   position: relative;
   text-align: center;
 }
-
-.background {
+header .image-wrapper .background {
   width: 100%;
   height: auto;
   display: block;
 }
-
-.logo-video {
+header .image-wrapper .logo-video {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90vw;
 }
-
-.logo {
+header .image-wrapper .logo-video .logo {
   width: 250px;
   margin-bottom: 1rem;
 }
-
-.video-wrapper iframe {
+header .image-wrapper .logo-video .video-wrapper iframe {
   width: 560px;
   height: 315px;
   max-width: 90vw;
 }
-
 .about {
   padding: 2rem;
   text-align: center;
-  background: #222;
+  background: #0f0f0f;
 }
-
 .gallery {
   padding: 2rem;
   background: #000;
   text-align: center;
 }
-
-.gallery-images {
+.gallery .gallery-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   padding-top: 1rem;
 }
-
-.gallery-images img {
+.gallery .gallery-images img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
-
 .videos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,50 +82,41 @@ header {
   padding: 2rem;
   background: #111;
 }
-
 .videos iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
 }
-
 .stores {
   background: #000;
   text-align: center;
   padding: 2rem;
 }
-
-.store-logos {
+.stores .store-logos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
 }
-
-.store-logos img {
+.stores .store-logos img {
   height: 50px;
 }
-
-.social-container {
+.stores .social-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-
-.social-icons,
-.nekki-banzai-logos {
+.stores .social-container .social-icons,
+.stores .social-container .nekki-banzai-logos {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-.social-icons img,
-.nekki-banzai-logos img {
+.stores .social-container .social-icons img,
+.stores .social-container .nekki-banzai-logos img {
   height: 30px;
 }
-
-/* Форма авторизації */
 .auth-form {
   max-width: 400px;
   margin: 2rem auto;
@@ -154,26 +128,22 @@ header {
   flex-direction: column;
   gap: 1rem;
 }
-
 .auth-form h2 {
   margin: 0;
   font-size: 1.5rem;
   text-align: center;
 }
-
 .auth-form label {
   display: flex;
   flex-direction: column;
   font-weight: bold;
 }
-
 .auth-form input {
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
   margin-top: 0.5rem;
 }
-
 .auth-form button {
   padding: 0.75rem;
   background-color: #0af;
@@ -183,54 +153,43 @@ header {
   color: #fff;
   cursor: pointer;
 }
-
 .auth-form button:hover {
   background-color: #08c;
 }
-
 footer {
   background: #000;
   color: #aaa;
   text-align: center;
   padding: 1rem;
 }
-
-/* Адаптивність */
 @media (max-width: 768px) {
   .video-wrapper iframe {
     width: 90vw;
     height: auto;
   }
-
   .videos {
     grid-template-columns: 1fr;
   }
-
   .logo-video {
     width: 90vw;
   }
-
   .auth-form {
     margin: 1rem;
     padding: 1rem;
   }
 }
-
 @media (max-width: 480px) {
   .nav-bar ul {
     flex-direction: column;
     align-items: center;
   }
-
   .logo {
     width: 200px;
   }
-
   .store-logos {
     flex-direction: column;
     align-items: center;
   }
-
   .social-icons,
   .nekki-banzai-logos {
     justify-content: center;
