@@ -34,10 +34,12 @@ header .image-wrapper {
   text-align: center;
 }
 header .image-wrapper .background {
+  background-image: url("https://shadowfight2.com/images/bg.jpg");
   width: 100%;
-  height: auto;
+  height: 500px;
   display: block;
 }
+
 header .image-wrapper .logo-video {
   position: absolute;
   top: 50%;
