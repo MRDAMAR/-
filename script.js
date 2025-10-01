@@ -13,3 +13,9 @@ console.log("background-color <body>:", bodyBg);
 // Значення font-size для <h1>
 const h1 = document.querySelector("h1");
 console.log("font-size <h1>:", getComputedStyle(h1).fontSize);
+
+//Зміна кольру на червоний
+const btn = document.getElementById("startBtn");
+btn.addEventListener("click", changeBodyColor);
+
+
