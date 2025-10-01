@@ -18,4 +18,13 @@ console.log("font-size <h1>:", getComputedStyle(h1).fontSize);
 const btn = document.getElementById("startBtn");
 btn.addEventListener("click", changeBodyColor);
 
+function changeBodyColor() {
+    if (document.body.style.backgroundColor === "red") {
+        document.body.style.backgroundColor = "";
+    } else {
+        document.body.style.backgroundColor = "red";
+    }
+}
+
+
 
