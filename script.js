@@ -1,30 +1,36 @@
-// Кількість параграфів <p>
-const paragraphs = document.querySelectorAll("p");
-console.log("Кількість <p>:", paragraphs.length);
+window.addEventListener("load", () => {
+    setTimeout(addGalleryImages, 5000);
+});
 
-// Кількість заголовків <h2>
-const h2s = document.querySelectorAll("h2");
-console.log("Кількість <h2>:", h2s.length);
+function addGalleryImages() {
+    // Масив з URL-адресами
+    const imagesUrl = [
+        "https://shadowfight2.com/images/slides/screenshot_01.jpg",
+        "https://shadowfight2.com/images/slides/screenshot_02.jpg",
+        "https://shadowfight2.com/images/slides/screenshot_03.jpg",
+        "https://shadowfight2.com/images/slides/screenshot_04.jpg",
+        "https://shadowfight2.com/images/slides/screenshot_05.jpg",
+        "https://shadowfight2.com/images/slides/screenshot_06.jpg"
+    ];
 
-// Значення background-color для <body>
-const bodyBg = getComputedStyle(document.body).backgroundColor;
-console.log("background-color <body>:", bodyBg);
-
-// Значення font-size для <h1>
-const h1 = document.querySelector("h1");
-console.log("font-size <h1>:", getComputedStyle(h1).fontSize);
-
-//Зміна кольру на червоний
-const btn = document.getElementById("startBtn");
-btn.addEventListener("click", changeBodyColor);
-
-function changeBodyColor() {
-    if (document.body.style.backgroundColor === "red") {
-        document.body.style.backgroundColor = "";
-    } else {
-        document.body.style.backgroundColor = "red";
+    const gallery = document.querySelector(".gallery-images");
+    if (!gallery) {
+        return;
     }
+
+    const fragment = document.createDocumentFragment();
+
+    imagesUrl.forEach((url, index) => {
+        setTimeout(() => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = `Скріншот ${index + 1}`;
+            img.classList.add("fade-in");
+
+            fragment.appendChild(img);
+            gallery.appendChild(fragment);
+
+            console.log(`✅ Додано: ${url}`);
+        }, index * 1000);
+    });
 }
-
-
-
