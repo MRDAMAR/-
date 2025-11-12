@@ -1,10 +1,26 @@
-// Імітація введення користувачем
-let rawLogin = "  user!@#name$$$   ";
+// Асинхронна функція для запиту до API
+async function getDogImage() {
+    const url = 'https://dog.ceo/api/breeds/image/random';
 
-// Видаляємо все, крім літер, цифр і _
-let cleanedLogin = rawLogin.replace(/[^a-zA-Z0-9_]/g, "");
+    try {
+        const response = await fetch(url); // робимо запит до API
 
-// Також прибираємо зайві пробіли (на початку/в кінці)
-cleanedLogin = cleanedLogin.trim();
+        if (!response.ok) {
+            throw new Error('Помилка запиту: ' + response.status);
+        }
 
-console.log("Очищений login:", cleanedLogin);
+        const data = await response.json(); // перетворюємо у JS-об’єкт
+        console.log(data);
+
+        // Виводимо фото на сторінку
+        const container = document.getElementById('dogContainer');
+        container.innerHTML = `<img src="${data.message}" alt="Dog Image">`;
+
+    } catch (error) {
+        console.error('Помилка:', error);
+        document.getElementById('dogContainer').innerHTML = '<p>Не вдалося отримати фото 😢</p>';
+    }
+}
+
+// Додаємо обробник події на кнопку
+document.getElementById('getDogBtn').addEventListener('click', getDogImage);
