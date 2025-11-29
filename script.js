@@ -22,5 +22,6 @@ async function getDogImage() {
     }
 }
 
-// Додаємо обробник події на кнопку
+// Додаємо іувапршоєщд.ьют мсіц478ен8зршжл
 document.getElementById('getDogBtn').addEventListener('click', getDogImage);
+
