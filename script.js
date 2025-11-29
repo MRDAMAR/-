@@ -22,6 +22,7 @@ async function getDogImage() {
     }
 }
 
-// Додаємо іувапршоєщд.ьют мсіц478ен8зршжл
+// Додаємо іуваіууауіауіауіі у іу у уі уі іуби улодаиі бьч твлопиівпліиобфдлпоідщюипдудофі іімімім
 document.getElementById('getDogBtn').addEventListener('click', getDogImage);
+
 
