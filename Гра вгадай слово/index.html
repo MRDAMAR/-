@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вгадай число 🎯</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Вгадай число 🎯</h1>
 
+        <!-- Вибір складності -->
+        <div class="input-section">
+            <label>Складність:</label>
+            <select id="difficulty">
+                <option value="10">1–10</option>
+                <option value="100">1–100</option>
+                <option value="1000">1–1000</option>
+            </select>
+        </div>
+
+        <!-- Вибір режиму -->
+        <div class="input-section">
+            <label>Режим:</label>
+            <select id="mode">
+                <option value="classic">Класичний</option>
+                <option value="endless">Нескінченний</option>
+                <option value="tournament">Турнір</option>
+            </select>
+        </div>
+
+        <!-- Панель налаштувань турніру -->
+        <div id="tournamentSettings" class="input-section hidden">
+            <label>Кількість раундів:</label>
+            <input type="number" id="roundsInput" min="1" value="5">
+            <label>Кількість спроб на раунд:</label>
+            <input type="number" id="maxAttemptsInput" min="1" value="10">
+        </div>
+
+        <!-- Кнопки старт/кінець гри -->
+        <button id="startBtn">Почати гру</button>
+        <button id="endGameBtn" style="display:none;">Завершити гру</button>
+
+        <!-- Ігрова панель -->
+        <div id="gameArea" style="display:none;">
+            <div class="stats">
+                <p>⏳ Час: <span id="timer">0</span></p>
+                <p>Раунд: <span id="currentRound">0</span> / <span id="totalRounds">0</span></p>
+                <p>Спроби: <span id="attempts">0</span> / <span id="maxAttempts">0</span></p>
+                <p>Очки: <span id="score">0</span></p>
+            </div>
+
+            <input type="number" id="userGuess" placeholder="Ваше число">
+            <button id="checkGuessBtn">OK</button>
+
+            <div class="hints">
+                <button id="hintParityBtn">Парність (-2 спроби)</button>
+                <button id="hintNearBtn">Близькість (-3 спроби)</button>
+                <button id="hintDivBtn">Ділимість (-4 спроби)</button>
+                <button id="hintSideBtn">Сторона діапазону (-3 спроби)</button>
+            </div>
+
+            <p id="result"></p>
+        </div>
+
+        <!-- Модифікатори -->
+        <div class="modifiers-section">
+            <button id="toggleModifiers" class="toggle-btn closed">Модифікатори ▼</button>
+            <div id="modifiersContainer" class="modifiers-panel hidden"></div>
+        </div>
+
+    </div>
+</body>
+</html>
